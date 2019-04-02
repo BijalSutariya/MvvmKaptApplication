@@ -9,12 +9,12 @@ import javax.inject.Inject
 
 class MainViewModel @Inject constructor(repository: MovieRepository) : ViewModel() {
 
-    private var moviesLiveData: LiveData<Resource<List<MovieEntity>>>? = null
+    private var moviesLiveData: LiveData<Resource<List<MovieEntity>>>
     init {
         moviesLiveData = repository.LoadMovieList()
     }
 
-    fun getMovieList():LiveData<Resource<List<MovieEntity>>>?{
+    fun getMovieList():LiveData<Resource<List<MovieEntity>>>{
         return moviesLiveData
     }
 }

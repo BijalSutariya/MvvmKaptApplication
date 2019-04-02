@@ -35,7 +35,6 @@ abstract class NetworkBoundResource<T, V> {
     }
 
     @SuppressLint("StaticFieldLeak")
-    @MainThread
     private fun saveResultAndReInit(response: V) {
         object : AsyncTask<Unit, Unit, Unit>() {
             override fun doInBackground(vararg p0: Unit?) {
